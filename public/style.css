@@ -1,0 +1,47 @@
+@import url("./style/header.css");
+@import url("./style/login.css");
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-background-h: #ffffff;
+    --color-text-h: #cfc89a;
+    --button-color: #072e5c;
+    --color-header: #ccded2;
+    --color-principal-bg: #89a194;
+    --color-icon: #072e5c;
+    --fonte-principal: "Poppins";
+    --color-hover: #ffffff
+}
+
+.banner-1 {
+    background: url("../Imagens/bg-spluementos.webp") no-repeat;
+    background-position: center;
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.principal {
+    font-family: var(--fonte-principal);
+}
+
+.img-perfil {
+    width: 45px;
+    height: 45px;
+}
+
+
+.categorias__link {
+    text-decoration: none;
+    color: black;
+}
+
+.primeiraImagem {
+    
+    height: 500px;
+}
