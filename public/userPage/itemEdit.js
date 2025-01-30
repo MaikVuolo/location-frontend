@@ -8,7 +8,7 @@ const fileNameSpan = document.getElementById('item-edit-pic-file-name');
 async function getItensPublished(){
     try {
         const userId = obterCookie("id")
-        const items = await fetch(`http://localhost:3000/itemsforuser/${userId}`,{
+        const items = await fetch(`https://location-backend-pmgg.onrender.com/itemsforuser/${userId}`,{
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -86,7 +86,7 @@ async function getItensPublished(){
                 const itemCard = button.closest('.card');
                 const itemData = JSON.parse(itemCard.dataset.itemData);
                 const itemId = itemData._id;
-                const routeDelete = await fetch(`http://localhost:3000/removeitem/${itemId}`,{
+                const routeDelete = await fetch(`https://location-backend-pmgg.onrender.com/removeitem/${itemId}`,{
                     method: "DELETE"
                 })
 
@@ -136,7 +136,7 @@ editForm.addEventListener("submit", async (event) => {
       }  
     
     try {
-        const response = await fetch("http://localhost:3000/edititem", {
+        const response = await fetch("https://location-backend-pmgg.onrender.com/edititem", {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json'

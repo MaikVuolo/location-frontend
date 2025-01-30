@@ -7,7 +7,7 @@ const cartTotal = document.getElementById("totalCompras");
 export  async function addCartToStorage() {
         try {
             const userId = obterCookie("id");
-            const response = await fetch(`http://localhost:3000/getcart/${userId}`, {
+            const response = await fetch(`https://location-backend-pmgg.onrender.com/getcart/${userId}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -31,7 +31,7 @@ export  async function addCartToStorage() {
     
         try {
             const userId = obterCookie("id");
-            const response = await fetch(`http://localhost:3000/getcart/${userId}`, {
+            const response = await fetch(`https://location-backend-pmgg.onrender.com/getcart/${userId}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json"
@@ -59,7 +59,7 @@ export async function updateCart (){
     
     try {
         const userId = obterCookie("id");
-        const response = await fetch(`http://localhost:3000/getcart/${userId}`, {
+        const response = await fetch(`https://location-backend-pmgg.onrender.com/getcart/${userId}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -125,7 +125,7 @@ function impressProduct () {
                 console.log(userId);
     
                 try {
-                    const response = await fetch("http://localhost:3000/removecartitem", {
+                    const response = await fetch("https://location-backend-pmgg.onrender.com/removecartitem", {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'

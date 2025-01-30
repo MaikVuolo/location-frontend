@@ -6,7 +6,7 @@ const section = document.getElementById("equipamentos-page");
 
 async function getEquips(){
     try {
-        const equipamentos = await fetch("http://localhost:3000/findproductcategory/Equipamento");
+        const equipamentos = await fetch("https://location-backend-pmgg.onrender.com/findproductcategory/Equipamento");
         const equips = await equipamentos.json();
 
         if(!equips){
@@ -52,7 +52,7 @@ async function cartAddItem() {
             const productId = event.target.closest(".card").querySelector("input[name='productID']").value;
             
                     try {
-                        const response = await fetch(`http://localhost:3000/findproduct/${productId}`, {
+                        const response = await fetch(`https://location-backend-pmgg.onrender.com/findproduct/${productId}`, {
                             method: "GET",
                             headers: {
                                 "Content-Type": "application/json"
@@ -68,7 +68,7 @@ async function cartAddItem() {
                             alert("Você precisa estar logado para adicionar itens ao carrinho")
                             return;
                         }
-                        const insertProductDb = await fetch("http://localhost:3000/cartAdd", {
+                        const insertProductDb = await fetch("https://location-backend-pmgg.onrender.com/cartAdd", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"

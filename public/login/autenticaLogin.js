@@ -13,7 +13,7 @@ formLogin.addEventListener('submit', async (event) => {
   
 
   try {
-    const response = await fetch ('http://localhost:3000/autenticar', {
+    const response = await fetch ('https://location-backend-pmgg.onrender.com/autenticar', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

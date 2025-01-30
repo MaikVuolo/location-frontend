@@ -6,7 +6,7 @@ const section = document.getElementById("suplementos-page");
 
 async function getSuplements(){
     try {
-        const suplementos = await fetch("http://localhost:3000/findproductcategory/Suplemento");
+        const suplementos = await fetch("https://location-backend-pmgg.onrender.com/findproductcategory/Suplemento");
         const suplements = await suplementos.json();
 
         if(!suplements){
@@ -53,7 +53,7 @@ async function cartAddItem() {
             console.log(`Produto adicionado ao carrinho: ${productId}`);
            
                     try {
-                        const response = await fetch(`http://localhost:3000/findproduct/${productId}`, {
+                        const response = await fetch(`https://location-backend-pmgg.onrender.com/findproduct/${productId}`, {
                             method: "GET",
                             headers: {
                                 "Content-Type": "application/json"
@@ -68,7 +68,7 @@ async function cartAddItem() {
                             alert("Você precisa estar logado para adicionar itens ao carrinho")
                             return;
                         }
-                        const insertProductDb = await fetch("http://localhost:3000/cartAdd", {
+                        const insertProductDb = await fetch("https://location-backend-pmgg.onrender.com/cartAdd", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"

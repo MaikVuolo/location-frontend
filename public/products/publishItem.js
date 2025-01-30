@@ -22,7 +22,7 @@ fileInput.addEventListener('change', (event) =>{
     const formData = new FormData();
     formData.append('itemPic', file);
     try {
-      const response = await fetch('http://localhost:3000/uploadItemPic', {
+      const response = await fetch('https://location-backend-pmgg.onrender.com/uploadItemPic', {
         method: 'POST',
         body: formData,
       });
@@ -63,7 +63,7 @@ try {
       const itemPic = await uploadItemPic(file);
 
     if(categoriItemValue === "Vestuário" || categoriItemValue === "Suplemento" || categoriItemValue === "Equipamento" || categoriItemValue === "Acessório" && nameItem.trim() && descriptionItem.trim() && !isNaN(priceItem) && priceItem > 0){
-        const response = await fetch ("http://localhost:3000/addproduto", {
+        const response = await fetch ("https://location-backend-pmgg.onrender.com/addproduto", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

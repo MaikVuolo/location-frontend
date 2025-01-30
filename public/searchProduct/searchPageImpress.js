@@ -5,7 +5,7 @@ async function items (){
     const search = localStorage.getItem("searchValue")
     const section = document.getElementById("search-principal-page");
 
-    const response = await fetch(`http://localhost:3000/pesquisa/${search}`)
+    const response = await fetch(`https://location-backend-pmgg.onrender.com/pesquisa/${search}`)
     
     const itens = await response.json();
     console.log(itens);
@@ -59,7 +59,7 @@ async function cartAddItem() {
             console.log(`Produto adicionado ao carrinho: ${productId}`);
             
                     try {
-                        const response = await fetch(`http://localhost:3000/findproduct/${productId}`, {
+                        const response = await fetch(`https://location-backend-pmgg.onrender.com/findproduct/${productId}`, {
                             method: "GET",
                             headers: {
                                 "Content-Type": "application/json"
@@ -75,7 +75,7 @@ async function cartAddItem() {
                             alert("Você precisa estar logado para adicionar itens ao carrinho")
                             return;
                         }
-                        const insertProductDb = await fetch("http://localhost:3000/cartAdd", {
+                        const insertProductDb = await fetch("https://location-backend-pmgg.onrender.com/cartAdd", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"

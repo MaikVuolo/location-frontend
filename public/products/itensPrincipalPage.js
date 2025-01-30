@@ -79,7 +79,7 @@ export async function getItens() {
 
 async function findCategory(categoria){
     try {
-        const itensCategory = await fetch(`http://localhost:3000/findproductcategory/${categoria}`,)
+        const itensCategory = await fetch(`https://location-backend-pmgg.onrender.com/findproductcategory/${categoria}`,)
         const itens = await itensCategory.json()
     
         if(!itens){
@@ -100,7 +100,7 @@ async function cartAddItem() {
             console.log(`Produto adicionado ao carrinho: ${productId}`);
            
                     try {
-                        const response = await fetch(`http://localhost:3000/findproduct/${productId}`, {
+                        const response = await fetch(`https://location-backend-pmgg.onrender.com/findproduct/${productId}`, {
                             method: "GET",
                             headers: {
                                 "Content-Type": "application/json"
@@ -116,7 +116,7 @@ async function cartAddItem() {
                             alert("Você precisa estar logado para adicionar itens ao carrinho")
                             return;
                         }
-                        const insertProductDb = await fetch("http://localhost:3000/cartAdd", {
+                        const insertProductDb = await fetch("https://location-backend-pmgg.onrender.com/cartAdd", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"

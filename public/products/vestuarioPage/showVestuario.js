@@ -6,7 +6,7 @@ const section = document.getElementById("vestuario-page");
 
 async function getClothing(){
     try {
-        const vestuario = await fetch("http://localhost:3000/findproductcategory/Vestuário");
+        const vestuario = await fetch("https://location-backend-pmgg.onrender.com/findproductcategory/Vestuário");
         const clothing = await vestuario.json();
 
         if(!clothing){
@@ -53,7 +53,7 @@ async function cartAddItem() {
       
            
                     try {
-                        const response = await fetch(`http://localhost:3000/findproduct/${productId}`, {
+                        const response = await fetch(`https://location-backend-pmgg.onrender.com/findproduct/${productId}`, {
                             method: "GET",
                             headers: {
                                 "Content-Type": "application/json"
@@ -69,7 +69,7 @@ async function cartAddItem() {
                             alert("Você precisa estar logado para adicionar itens ao carrinho")
                             return;
                         }
-                        const insertProductDb = await fetch("http://localhost:3000/cartAdd", {
+                        const insertProductDb = await fetch("https://location-backend-pmgg.onrender.com/cartAdd", {
                             method: "POST",
                             headers: {
                                 "Content-Type": "application/json"

@@ -16,7 +16,7 @@ const form = document.getElementById('uploadForm');
       }else{
         const cookieJwt = obterCookie ("tokenJwt")
       
-        const autorizado = await fetch ('http://localhost:3000/verificar', {
+        const autorizado = await fetch ('https://location-backend-pmgg.onrender.com/verificar', {
             method: 'GET',
             headers: { 'Authorization': `Bearer ${cookieJwt}`  }
           })
@@ -67,7 +67,7 @@ const form = document.getElementById('uploadForm');
       
 
       try {
-        const response = await fetch('http://localhost:3000/uploadProfilePic', {
+        const response = await fetch('https://location-backend-pmgg.onrender.com/uploadProfilePic', {
           method: 'POST',
           body: formData,
         });
