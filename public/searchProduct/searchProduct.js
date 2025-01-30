@@ -8,7 +8,7 @@ searchForm.addEventListener("submit", async (event) => {
 
     localStorage.setItem("searchValue", search)
 
-    window.location.href = "/public/searchProduct/searchPage.html";
+    window.location.href = "https://luxury-manatee-bf8482.netlify.app/searchProduct/searchPage.html";
     
 
 })
