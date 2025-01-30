@@ -25,7 +25,7 @@ async function getEquips(){
                 "col-xl-2",
                 "m-4");
             itemCard.innerHTML = `
-                <img class="img-fluid" src="/Imagens/uploads/${item.itemPic}" class="card-img-top" alt="pote de creatina">
+                <img class="img-fluid" src="/public/assets/uploads/${item.itemPic}" class="card-img-top" alt="pote de creatina">
                 <div class="card-body">
                 <h5 class="card-title pb-3">${item.nome}</h5>
                 <h6 class="py-3 fs-3">R$${item.preco},00</h6>

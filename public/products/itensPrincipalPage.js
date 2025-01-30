@@ -30,8 +30,8 @@ export async function getItens() {
                     itemCard.style.width = "18rem";
 
                     const imgSrc = item.itemPic
-                        ? `/Imagens/uploads/${item.itemPic}`
-                        : "/Imagens/no-img.webp";
+                        ? `/public/assets/uploads/${item.itemPic}`
+                        : "/public/assets/no-img.webp";
 
                     itemCard.innerHTML = `
                         <img class="img-fluid" src="${imgSrc}" class="card-img-top" alt="${item.nome}">
