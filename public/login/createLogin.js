@@ -22,7 +22,7 @@ form.addEventListener('submit', async (event) => {
             throw new Error(mensagemErro);
           }else{
             alert("Conta criada com sucesso")
-            window.location.href = "http://127.0.0.1:5501/public/index.html"
+            window.location.href = "https://luxury-manatee-bf8482.netlify.app"
 
           }
           
