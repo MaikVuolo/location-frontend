@@ -37,7 +37,7 @@ async function getItensPublished(){
             itemCard.dataset.itemData = JSON.stringify(item); 
 
             itemCard.innerHTML = `
-                <img class="img-fluid" src="/public/assets/uploads/${item.itemPic}" class="card-img-top" alt="pote de creatina">
+                <img class="img-fluid" src="${item.itemPic}" class="card-img-top" alt="pote de creatina">
                 <div class="card-body">
                 <h5 class="card-title pb-3">${item.nome}</h5>
                 <h6 class="py-3 fs-3">R$${item.preco},00</h6>
@@ -132,7 +132,7 @@ editForm.addEventListener("submit", async (event) => {
         itemPicValue = document.getElementById("itemOriginalPic").value
       }else{
         const itemPic = await uploadItemPic(file);
-        itemPicValue = itemPic.fileName;
+        itemPicValue = itemPic;
       }  
     
     try {

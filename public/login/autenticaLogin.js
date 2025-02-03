@@ -52,8 +52,6 @@ formLogin.addEventListener('submit', async (event) => {
                 nomeUsuario: usuario,
                 imagemPerfil:null }));             
       }else{
-        
-        const caminhoReal = profilePicPath.split("Loja")
         alert('sucesso no login')
         window.location.reload()
 
@@ -63,13 +61,13 @@ formLogin.addEventListener('submit', async (event) => {
               <h3 class="fs-3  ms-3 mb-0 mt-1 me-1">
               ${usuario}
               </h3>
-              <img class="img-fluid rounded-circle img-perfil m-0" src="${caminhoReal[1]}" alt="Imagem perfil">
+              <img class="img-fluid rounded-circle img-perfil m-0" src="${profilePicPath}" alt="Imagem perfil">
           </div>
           </a>
               `
         localStorage.setItem('usuarioLogado', JSON.stringify({
           nomeUsuario: usuario,
-          imagemPerfil: caminhoReal[1]
+          imagemPerfil: profilePicPath
         }));
       }
       

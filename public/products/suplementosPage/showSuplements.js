@@ -25,7 +25,7 @@ async function getSuplements(){
                 "col-xl-2",
                 "m-4");
             itemCard.innerHTML = `
-                <img class="img-fluid" src="https://luxury-manatee-bf8482.netlify.app/assets/uploads/${suplement.itemPic}" class="card-img-top" alt="pote de creatina">
+                <img class="img-fluid" src="${suplement.itemPic}" class="card-img-top" alt="pote de creatina">
                 <div class="card-body">
                 <h5 class="card-title pb-3">${suplement.nome}</h5>
                 <h6 class="py-3 fs-3">R$${suplement.preco},00</h6>

@@ -30,7 +30,7 @@ export async function getItens() {
                     itemCard.style.width = "18rem";
 
                     const imgSrc = item.itemPic
-                        ? `https://luxury-manatee-bf8482.netlify.app/assets/uploads/${item.itemPic}`
+                        ? `${item.itemPic}`
                         : "https://luxury-manatee-bf8482.netlify.app/assets/no-img.webp";
 
                     itemCard.innerHTML = `

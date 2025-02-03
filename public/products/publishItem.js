@@ -33,7 +33,8 @@ fileInput.addEventListener('change', (event) =>{
         throw new Error(`Erro ao fazer upload: ${response.statusText}`);
       }
 
-      return await response.json();
+      const itemPic = await response.json();
+      return itemPic.itemPic
     } catch (error) {
       console.error('Erro:', error.message);
       throw error;
@@ -73,7 +74,7 @@ try {
                 nome: nameItem,
                 descricao: descriptionItem,
                 preco: priceItem,
-                itemPic: itemPic.fileName,
+                itemPic: itemPic,
                 publishedBy: userId
             })
         })
