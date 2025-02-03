@@ -39,10 +39,8 @@ const form = document.getElementById('uploadForm');
           // Modificar a propriedade desejada
           const caminhoImg = response.profilePic;
           
-          const caminhoReal = caminhoImg.split("Loja");
-          
-          if (caminhoReal.length > 1) {
-            usuarioLogado.imagemPerfil = caminhoReal[1];
+          if (caminhoImg.length > 1) {
+            usuarioLogado.imagemPerfil = caminhoImg;
         } else {
             console.error('Erro: Caminho de imagem inválido.');
         }
