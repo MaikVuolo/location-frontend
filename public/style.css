@@ -17,8 +17,12 @@
     --color-hover: #ffffff
 }
 
+.carousel-img {
+    height: 500px;
+    width: 800px;
+}
+
 .banner-1 {
-    background: url("../Imagens/bg-spluementos.webp") no-repeat;
     background-position: center;
     width: 100%;
     background-size: cover;
