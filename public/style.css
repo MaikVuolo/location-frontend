@@ -21,6 +21,10 @@
     height: 500px;
     width: 800px;
 }
+.card-cart-compras {
+    height: 90vh;
+    width: 100%;
+}
 
 .banner-1 {
     background-position: center;

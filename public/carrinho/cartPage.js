@@ -3,6 +3,8 @@ import { obterCookie } from "../utilsFront/cookie.js";
 
 const cartHTML = document.getElementById("productsCart");
 const cartTotal = document.getElementById("totalCompras");
+const itensAdicionados = document.getElementById("itens-adicionados");
+const btnEndCart = document.getElementById("btn-end-cart");
 
 export  async function addCartToStorage() {
         try {
@@ -93,6 +95,7 @@ function impressProduct () {
     console.log(cart);
     
     cartHTML.innerHTML = ""
+    itensAdicionados.innerHTML = ""
 
     cart.cart.forEach((product, index) => {
             const cartItem = document.createElement("div");
@@ -117,6 +120,11 @@ function impressProduct () {
                     <button type="button" class="btn btn-dark" id="btnRemoveItem">Remover do carrinho</button>
                     
             `
+            const itensCard = document.createElement("div");
+            itensCard.innerHTML = `
+            <p class="card-text"><span class="mt-1 text-black" >${product[0].nome}: ${product[1]} unidade</span></p>
+            `
+
             const removeButton = cartItem.querySelector("#btnRemoveItem");
             removeButton.addEventListener("click", async (event) => {
                 event.preventDefault();
@@ -143,11 +151,39 @@ function impressProduct () {
             });
     
             cartHTML.appendChild(cartItem);
+            itensAdicionados.appendChild(itensCard)
 
         })
     };
+if(btnEndCart){
 
-
+    btnEndCart.addEventListener("click", async (event) => {
+        event.preventDefault()
+    
+        const userId = obterCookie("id");
+        try {
+            if(!userId){
+                throw new Error("Id de usuario não existe")
+            }
+        
+            const response = await fetch (`https://location-backend-pmgg.onrender.com/endcart/${userId}`, {
+                method: "PUT",
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+    
+            if(!response.ok){
+                alert("Falha ao finalizar compra")
+                throw new Error("Falha ao finalizar compra")
+            }
+            alert("Compra finalizada com sucesso!")
+            window.location.reload()
+        } catch (err) {
+            console.error(err.message)
+        }
+    })
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     if (cartHTML) {

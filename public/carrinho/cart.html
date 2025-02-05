@@ -22,8 +22,6 @@
           </div>
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
               <h5 class="d-flex align-items-center px-4 text-center">
-                <p class="mt-3">Total Compras:</p>
-                <span class="mt-1 text-success" id="totalCompras">0</span>
               </h5>
               <div id="botoesLogin">
 
@@ -33,9 +31,23 @@
         </nav>                            
   </header>
 
-  <section >
-    <div class="row justify-content-center g-0 row gap-4 " id="productsCart" >
-
+  <section class="d-flex justify-content-between">
+    <div class="row justify-content-center g-0 gap-4 " id="productsCart" >
+      
+    </div>
+    <div class="card border-success mb-3 card-cart-compras rounded-0" style="max-width: 18rem;">
+      <div class="card-header bg-transparent border-success text-center fw-bold">Carrinho</div>
+      <div class="card-body text-success">
+        <div id="itens-adicionados" class="py-3">
+        
+        </div>
+       
+      </div>
+      <div class="card-footer bg-transparent border-success text-center">
+        <h5 class="card-title">Valor das suas compras:</h5>
+        <p class="card-text"><span class="mt-1 text-success" id="totalCompras">0</span></p>
+        <button id="btn-end-cart" class="btn btn-success">Finalizar compra</button>
+      </div>
     </div>
   </section>
   
