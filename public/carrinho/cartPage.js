@@ -114,7 +114,7 @@ function impressProduct () {
                         "col-12",
                         "col-md-6",
                         "col-xl-3",
-                        "m-4");
+                        "pb-3");
             cartItem.innerHTML = `
                     <img class="img-fluid" src="${product[0].itemPic}" class="card-img-top" alt="pote de creatina">
                     <div class="card-body">

@@ -26,6 +26,12 @@
     width: 100%;
 }
 
+.categoria-link:hover {
+    background-color: black;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
 .banner-1 {
     background-position: center;
     width: 100%;
@@ -52,4 +58,16 @@
 .primeiraImagem {
     
     height: 500px;
+}
+
+@media (max-width: 768px) {
+    .search-bar {
+        width: 100% !important; /* O input ocupa toda a largura */
+        padding-top: 0 !important;
+    }
+
+    .categoria-link {
+        padding-left: 16px !important;
+        width: 50% !important;
+    }
 }
