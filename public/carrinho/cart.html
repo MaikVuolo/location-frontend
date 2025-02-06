@@ -32,10 +32,34 @@
   </header>
 
   <section class="d-flex justify-content-between">
-    <div class="row justify-content-center g-0 gap-4 " id="productsCart" >
+
+    <!-- cart screen sm -->
+    <div class="card border-success mb-3 rounded-0 d-md-none d-sm-block w-100">
+      <div class="row g-0">
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title text-center fw-bold">Carrinho</h5>
+            <div id="itens-adicionados-sm" class="py-3">
+        
+            </div>
+            <div class="card-footer bg-transparent border-success text-center">
+              <h5 class="card-title">Valor das suas compras:</h5>
+              <p class="card-text"><span class="mt-1 text-success" id="total-compras-sm">0,00</span></p>
+              <button class="btn btn-success" id="btn-end-cart-sm">Finalizar compra</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center g-0 gap-4 d-md-none" id="products-cart-sm" >
       
     </div>
-    <div class="card border-success mb-3 card-cart-compras rounded-0" style="max-width: 18rem;">
+    </div>
+   
+    <!-- cart screen md or more -->
+    <div class="row row-cols-md-3 row-cols-lg-2 g-3 d-none d-md-flex align-items-center " id="productsCart" >
+      
+    </div>
+    <div class="card border-success mb-3 card-cart-compras rounded-0 d-none d-md-block" style="max-width: 18rem;">
       <div class="card-header bg-transparent border-success text-center fw-bold">Carrinho</div>
       <div class="card-body text-success">
         <div id="itens-adicionados" class="py-3">
@@ -46,7 +70,7 @@
       <div class="card-footer bg-transparent border-success text-center">
         <h5 class="card-title">Valor das suas compras:</h5>
         <p class="card-text"><span class="mt-1 text-success" id="totalCompras">0</span></p>
-        <button id="btn-end-cart" class="btn btn-success">Finalizar compra</button>
+        <button class="btn btn-success" id="btn-end-cart">Finalizar compra</button>
       </div>
     </div>
   </section>
@@ -77,6 +101,5 @@
     <script src="../login/userProfile.js" type="module"></script>
     <script src="../login/updateProfilePic.js" type="module"></script>
     <script src="./cartPage.js" type="module"></script>
-    <script type="module" src="../index.js"></script>
 </body>
 </html>

@@ -5,6 +5,11 @@ const cartHTML = document.getElementById("productsCart");
 const cartTotal = document.getElementById("totalCompras");
 const itensAdicionados = document.getElementById("itens-adicionados");
 const btnEndCart = document.getElementById("btn-end-cart");
+const itensScreenSM = document.getElementById("itens-adicionados-sm");
+const cartHtmlSm = document.getElementById("products-cart-sm")
+const cartTotalSm = document.getElementById("total-compras-sm");
+
+
 
 export  async function addCartToStorage() {
         try {
@@ -80,6 +85,7 @@ export async function updateCart (){
         localStorage.setItem("cart", JSON.stringify({cart}));
         localStorage.setItem("totalCart", JSON.stringify({total}));
 
+        cartTotalSm.innerHTML = `R$${total.toFixed(2)}`;
         cartTotal.innerHTML = `R$${total.toFixed(2)}`;
     } catch (error) {
         console.error("Erro ao atualizar o carrinho no Local Storage:", error);
@@ -95,7 +101,9 @@ function impressProduct () {
     console.log(cart);
     
     cartHTML.innerHTML = ""
+    cartTotalSm.innerHTML = ""
     itensAdicionados.innerHTML = ""
+    itensScreenSM.innerHTML = ""
 
     cart.cart.forEach((product, index) => {
             const cartItem = document.createElement("div");
@@ -105,7 +113,7 @@ function impressProduct () {
                         "border-0",
                         "col-12",
                         "col-md-6",
-                        "col-xl-2",
+                        "col-xl-3",
                         "m-4");
             cartItem.innerHTML = `
                     <img class="img-fluid" src="${product[0].itemPic}" class="card-img-top" alt="pote de creatina">
@@ -144,14 +152,16 @@ function impressProduct () {
                     const teste = await response.json();
                     updateCart ()
                     alert("Item Removido!")
-                    window.location.href = "./cart.html"
+                    window.location.reload()
                 } catch (err) {
                     console.error("Error:", err);
                 }
             });
-    
+            
             cartHTML.appendChild(cartItem);
-            itensAdicionados.appendChild(itensCard)
+            cartHtmlSm.appendChild(cartItem.cloneNode(true));
+            itensAdicionados.appendChild(itensCard);
+            itensScreenSM.appendChild(itensCard.cloneNode(true));
 
         })
     };
